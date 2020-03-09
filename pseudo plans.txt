@@ -1,0 +1,60 @@
+Summary
+
+Platform for individual users to keep track of their clothing usage and provide data on it. Incorporate tableau?
+
+How do we define landing page?
+
+Need user flow:
+
+MVP
+
+Item related
+- Add item
+- Delete item
+- Edit item
+- View item details
+- View item summary
+
+
+
+User Related
+- Create account
+- Delete account
+- Edit account
+- Login
+- Logout
+
+
+
+Feature list
+
+
+
+Routing
+
+// INDEX ROUTE
+
+
+// 
+
+
+Data structures
+
+// NEED USER structures
+
+// NEED each clothing item structures
+
+// Quick queries??
+
+
+
+Packages required
+
+QUESTIONS TO ASK
+
+1. What do you want to see on your summary page?
+2. What do you want to see for each listed item?
+3. What parameters are most important to you on items?
+3. Cost per wear, comparisons between cheaper items vs expensive items? Talk to weijie
+4. Best purchases, recommendation on clothing items from that =>?, buy more of certain items.
+5. 

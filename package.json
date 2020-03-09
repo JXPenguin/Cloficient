@@ -1,0 +1,11 @@
+{
+  "name": "cloficient",
+  "version": "1.0.0",
+  "description": "Web application to track clothing usage and provide user with respective data visualizations",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeffrey Peng",
+  "license": "ISC"
+}
