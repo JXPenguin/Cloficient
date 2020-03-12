@@ -1,0 +1,76 @@
+<%- include("../partials/header") %>
+
+
+<!-- For buttons  -->
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome To Cloficient!</h1>
+			<p>Your Cloficient Rating is "130... ", that's 59% less waste than the average person in terms of clothing waste! Check out the details here=></p>
+		</div>
+	</header>
+	
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <!-- Display each category -->
+		<% categories.forEach((category) => { %>
+			<div class="col-md-12 col-sm-12">
+                <div class="container">
+                    <!-- Display each category as button with show more -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#<%= category.name %>" aria-expanded="false" aria-controls="collapseExample"><%= category.name %></button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/categories/<%= category._id %>/edit">Edit</a>
+                            <form action="/categories/<%= category._id %>?_method=DELETE" method="POST">
+                                <input type="submit" class="dropdown-item" value="Delete" onclick="return confirm('Are you sure?')">
+                            </form>
+                        </div>
+                      </div>
+                    
+                    <!-- Display items corresponding to each category  -->
+                    <% category.items.forEach((item) => { %>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info"><%= item.name %></button>
+                            <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Favorite</a>
+                                <a class="dropdown-item" href="#">Details</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/categories/<%= category._id %>/items/<%= item._id %>/edit">Edit</a>
+                                <form action="/categories/<%= category._id %>/items/<%= item._id %>?_method=DELETE" method="POST">
+                                    <input type="submit" class="dropdown-item" value="Delete" onclick="return confirm('Are you sure?')">
+                                </form>
+                                </div>
+                          </div>
+                    <% }); %>
+                    <a href="/categories/<%= category._id%>/items/new" class="btn btn-success" role="button">Add items</a>
+                    
+                    <!-- Hidden under category are unfavorite items -->
+                    <div class="collapse" id="<%= category.name %>">
+                        <div class="card card-body">
+                            Further items listed here
+                        </div>
+                    </div>
+                </div>
+			</div>
+        <% }); %>
+        <a class="btn btn-primary" href="/categories/new">Add New Category</a>
+	</div>
+</div>
+
+<div class="container">
+    <a class="btn btn-primary" href="/summary" role="button">Check out your cloficient rating!</a>
+</div>
+    
+
+
+<%- include("../partials/footer") %>

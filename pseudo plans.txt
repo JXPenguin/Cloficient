@@ -1,3 +1,15 @@
+Washing
+- New page, allows user to view clothes that have been worn and not washed, user can quick clear on the same page, after they wash said items
+- Individual washes
+- Wash ignore for now
+
+DELETED ITEMS
+- Have a why section
+- Damaged, vs don't wear
+- Don't wear, did you donate it?
+- DONATE VS RESELL VS GARBAGE
+
+
 Summary
 
 Platform for individual users to keep track of their clothing usage and provide data on it. Incorporate tableau?
