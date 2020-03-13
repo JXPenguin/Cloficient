@@ -11,9 +11,4 @@ router.get("/home", (req, res) => {
 	res.render("home");
 });
 
-// Summary Page
-router.get("/summary", (req, res)=> {
-	res.render("summary");
-});
-
 module.exports = router;

@@ -3,6 +3,7 @@ const   express = require("express"),
         Category = require("../models/category"),
         Item = require("../models/item");
 
+
 // ITEMS - NEW ROUTE
 router.get("/new", async (req, res) => {
 	try {
@@ -58,6 +59,16 @@ router.delete("/:item_id", async(req, res) => {
     } catch(err) {
         res.redirect("/categories");
     }
-})
+});
+
+// ITEMS - SHOW DETAILS
+router.get("/:item_id", async (req, res)=> {
+	try {
+        let foundItem = await Item.findById(req.params.item_id);
+        res.render("items/show", {item: foundItem});
+    } catch(err) {
+        res.redirect("/categories");
+    }
+});
 
 module.exports = router;

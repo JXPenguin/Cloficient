@@ -41,11 +41,19 @@ router.get("/:id/edit", async (req, res) => {
 });
 
 // CATEGORIES - UPDATE
-
 router.put("/:id", async (req, res) => {
     try {
         await Category.findByIdAndUpdate(req.params.id, req.body.category);
         res.redirect("/categories");
+    } catch(err) {
+        res.redirect("/categories");
+    }
+})
+
+// CATEGORIES - UPDATE-ALL
+router.put("/update-all", async (req, res) => {
+    try {
+        res.render("reached");
     } catch(err) {
         res.redirect("/categories");
     }
