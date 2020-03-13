@@ -48,7 +48,7 @@ router.put("/:id", async (req, res) => {
     } catch(err) {
         res.redirect("/categories");
     }
-})
+});
 
 // CATEGORIES - UPDATE-ALL
 router.put("/update-all", async (req, res) => {
@@ -57,7 +57,7 @@ router.put("/update-all", async (req, res) => {
     } catch(err) {
         res.redirect("/categories");
     }
-})
+});
 
 // CATEGORIES - DESTROY
 router.delete("/:id", async (req, res) => {
@@ -67,6 +67,16 @@ router.delete("/:id", async (req, res) => {
     } catch(err){
         res.redirect("/categories");
     }
-})
+});
+
+// CATEGORIES - SHOW DETAILS
+router.get("/:id", async (req, res) => {
+	try {
+        let foundCategory = await Category.findById(req.params.id);
+        res.render("categories/show", {category: foundCategory});
+    } catch(err) {
+        res.redirect("/categories");
+    }
+});
 
 module.exports = router;
